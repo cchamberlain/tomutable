@@ -1,6 +1,6 @@
 {
   "name": "tomutable",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Recursively converts a possible immutable-js structure (at any depth) to a regular object.",
   "main": "lib/index.js",
   "files": [
