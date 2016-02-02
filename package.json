@@ -4,19 +4,21 @@
   "description": "Recursively converts a possible immutable-js structure (at any depth) to a regular object.",
   "main": "lib/index.js",
   "files": [
-    "lib"
+    "lib",
+    "test"
   ],
   "scripts": {
     "clean": "rimraf lib",
-    "build": "babel src -d lib",
+    "build": "babel src -d ./",
     "rebuild": "npm run clean && npm run build",
     "git-add": "git add -A",
     "git-commit": "git commit -am \"publishing...\"",
     "git-save": "npm run git-add && npm run git-commit",
     "prepublish": "in-publish && npm prune --production=false || not-in-publish",
     "postpublish": "git push --follow-tags",
-    "package": "set NODE_ENV=production&& npm run rebuild && npm version patch && npm publish --tag latest",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "package": "set NODE_ENV=production&& npm run test && npm version patch && npm publish --tag latest",
+    "pretest": "npm run rebuild",
+    "test": "node test"
   },
   "repository": {
     "type": "git",
