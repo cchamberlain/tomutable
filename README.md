@@ -6,8 +6,16 @@ redux-dev-tools sometimes don't handle immutable state well.  Just chain through
 
 # Install
 
-`npm i tomutable`
+`npm i tomutable --save`
 
 # Usage
 
-`import toMutable
+```js
+import toMutable from 'tomutable'
+
+...
+
+const state = toMutable(maybeImmutableState)
+
+// do stuff
+```
